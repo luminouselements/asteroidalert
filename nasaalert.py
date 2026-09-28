@@ -26,7 +26,6 @@ MAX_CHARS = 200
 
 # Default template (<200 chars, includes emojis, miles, and JPL details link)
 DEFAULT_TEMPLATE = "🔭 NASA NEO Watch: 🔭\n🌠 {name}\n🕰️ {approach_date_full}\n🛸 {formatted_distance} mi from 🌍\n🔗 [https://nasa.gov]({url})"
-#DEFAULT_TEMPLATE = "🚨 NEO ALERT: {name}\n📅 {approach_date_full}\n📏 {formatted_distance} mi\n🔗 {url}"
 
 # --- RESILIENT TCP INTERFACE SUBCLASS ---
 class ResilientTCPInterface(TCPInterface):
