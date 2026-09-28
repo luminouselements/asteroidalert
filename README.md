@@ -42,7 +42,7 @@ Ensure you have Python 3.6+ installed.
 
 Run the main script:
 ```bash
-python AsteroidAlert/nasaalert.py
+python asteroidalert/nasaalert.py
 ```
 
 The script will check for today's NEOs, compare them against the last known alert, and broadcast if necessary.
