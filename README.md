@@ -48,4 +48,12 @@ The script will check for today's NEOs, compare them against the last known aler
 
 ## 🛠️ Customization
 
+**Example Output Message:**
+
+🔭 NASA NEO Watch: 🔭  
+🌠 523934 (1998 FF14)  
+🕰️ 2026-Sep-28 13:19  
+🛸 9,565,077.94 mi from 🌍  
+🔗 [https://nasa.gov](https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2523934&view=VOP)  
+
 You can customize the alert message template in `nasaalert.py` within the `DEFAULT_TEMPLATE` variable for different output formats.
