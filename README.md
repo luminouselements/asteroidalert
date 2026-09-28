@@ -1,12 +1,16 @@
-# Asteroid Alert System
+# ☄️ Asteroid Alert System 🔭
 ## 🚀 Overview
 
-This project monitors the Near-Earth Objects (NEOs) data from NASA's Solar System Dynamics website to detect potentially hazardous asteroids approaching Earth. When a significant object is found, it formats an alert message and attempts to broadcast it via a Meshtastic LoRa network interface.
+**Asteroid Alert System** is a Python-based monitoring system that tracks NASA's Near-Earth Object (NEO) data for approaching asteroids and broadcasts scheduled alerts over a Meshtastic LoRa mesh network via TCP.
+
+When a significant object is detected, the system generates a concise alert—complete with approach trajectory links, flight distance, and time—and broadcasts it directly across a local **Meshtastic LoRa** mesh network via TCP.
 
 ## ✨ Features
 
 *   **NASA API Integration:** Fetches daily NEO data from NASA's JPL (Asteroids - NeoWs) daily feed.  
 Example api query  (https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=DEMO_KEY)
+*   **NASA SBDB Lookup:** The url generated for the event leverages Nasa's Small-Body Database Lookup to display object details.
+*   **NASA SBDB Orbit Viewer:** url filter parameter included to SBDB Orbit Viewer to playback and review object's orbit trajectory relevant to time by default.
 *   **De-duplication:** Saves the `neo_reference_id` of the last alerted object to a state file (`/last_alerted_neo.txt`) to prevent spamming alerts for the same object on subsequent runs.
 *   **Meshtastic Broadcast:** Connects to a local Meshtastic node via TCP and transmits the formatted alert message over the configured LoRa channel.
 *   **Resilient Connection:** Includes logic to handle transient network issues when connecting to the Meshtastic node.
@@ -58,3 +62,6 @@ The script will check for today's NEOs, compare them against the last known aler
 🔗 [https://nasa.gov](https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2523934&view=VOP)  
 
 You can customize the alert message template in `nasaalert.py` within the `DEFAULT_TEMPLATE` variable for different output formats.
+
+**Example Orbit Viewer:**  *(can follow orbit of object and playback relevant to time.)*  
+<img style=left width="20%" height="20%" alt="orbit-viewer-snapshot" src="https://github.com/user-attachments/assets/d8283bbb-392b-45af-a0d9-8a14928bca32" />
