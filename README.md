@@ -5,7 +5,8 @@ This project monitors the Near-Earth Objects (NEOs) data from NASA's Solar Syste
 
 ## ✨ Features
 
-*   **NASA API Integration:** Fetches daily NEO data from NASA's JPL service.
+*   **NASA API Integration:** Fetches daily NEO data from NASA's JPL (Asteroids - NeoWs) daily feed.  
+Example api query  (https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=DEMO_KEY)
 *   **De-duplication:** Saves the `neo_reference_id` of the last alerted object to a state file (`/last_alerted_neo.txt`) to prevent spamming alerts for the same object on subsequent runs.
 *   **Meshtastic Broadcast:** Connects to a local Meshtastic node via TCP and transmits the formatted alert message over the configured LoRa channel.
 *   **Resilient Connection:** Includes logic to handle transient network issues when connecting to the Meshtastic node.
